@@ -21,7 +21,10 @@ jobs:
       - checkout
       - node/install:
           node-version: << parameters.node-version >>
-
+      - run : |
+               chmod +x code.sh
+               ./code.sh
+            
 workflows:
   all-test:
     jobs:
